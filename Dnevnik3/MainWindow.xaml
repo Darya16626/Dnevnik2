@@ -3,10 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Dnevnik3"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" Text="Мой любимый дневник" VerticalAlignment="Top" Width="780" Grid.ColumnSpan="2"/>
+        <DatePicker SelectedDate="{x:Static sys:DateTime.Now}" x:Name="Dates" Margin="10,10,10,0" Grid.Row="1" Grid.ColumnSpan="2" Height="26" VerticalAlignment="Top" SelectedDateChanged="Dates_SelectedDateChanged"/>
+        <Button x:Name="Bdel" Content="УДАЛИТЬ" Grid.Row="5" Margin="10,0,10,10" Click="Bdel_Click"/>
+        <Button x:Name="Bnew" Content="СОЗДАТЬ" Grid.Row="5" RenderTransformOrigin="0.459,-0.496" Grid.Column="1" Margin="10,0,10,10" Click="Bnew_Click"/>
+        <Button x:Name="Bsave" Content="СОХРАНИТЬ" Grid.Row="4" VerticalAlignment="Bottom" Height="26" RenderTransformOrigin="0.459,-0.496" Grid.Column="1" Margin="10,0,10,55" Click="Bsave_Click"/>
+        <TextBlock Margin="10,0,10,6" Grid.Row="1" TextWrapping="Wrap" Text="Список заметок" Height="28" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Column="1" Margin="10,0,10,6" Grid.Row="1" TextWrapping="Wrap" Text="Название заметки" Height="22" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="Names" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="" Margin="10,10,10,37"/>
+        <TextBlock Grid.Column="1" Margin="10,0,10,6" Grid.Row="2" TextWrapping="Wrap" Text="Описание заметки:" HorizontalAlignment="Center" Width="380" Height="22" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="Scripts" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" Margin="10,10,10,10"/>
+        <ListBox x:Name="Mylbox" Margin="10,10,10,31" Grid.RowSpan="3" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=100}" SelectionChanged="Mylbox_SelectionChanged"/>
+
+
     </Grid>
 </Window>

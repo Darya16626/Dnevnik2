@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ArrayOfInc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Inc>
+    <Name>Первая</Name>
+    <Script>вава</Script>
+    <Date>03.03.2024</Date>
+  </Inc>
+  <Inc>
+    <Name>Вторая</Name>
+    <Script>Вторая</Script>
+    <Date>03.03.2024</Date>
+  </Inc>
+</ArrayOfInc>
